@@ -1,0 +1,98 @@
+/* 1. Background Animation */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #581c87, #1e293b);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Calculator Body with Glow */
+.calculator {
+    background: rgba(30, 41, 59, 0.7);
+    padding: 30px;
+    border-radius: 35px;
+    width: 360px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: neonGlow 6s infinite alternate;
+}
+
+@keyframes neonGlow {
+    from { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); border-color: rgba(56, 189, 248, 0.4); }
+    to { box-shadow: 0 0 30px rgba(168, 85, 247, 0.5); border-color: rgba(168, 85, 247, 0.6); }
+}
+
+/* 3. Screen Style */
+.display input {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    color: #fff;
+    font-size: 3rem;
+    padding: 10px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* 4. Buttons Layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    height: 65px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.operator {
+    color: #38bdf8;
+    font-weight: 800;
+}
+
+.special {
+    color: #fb7185;
+    background: rgba(251, 113, 133, 0.1);
+}
+
+.equal {
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    color: white;
+    grid-row: span 2;
+    height: 145px;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+.zero {
+    grid-column: span 2;
+}
